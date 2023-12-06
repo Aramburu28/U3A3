@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="dueno_action" model="ir.actions.act_window">
+        <field name="name">Action Dueno</field>
+        <field name="res_model">salesianos.dueno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="mascota_action" model="ir.actions.act_window">
+        <field name="name">Action Mascota</field>
+        <field name="res_model">salesianos.mascota</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <record id="tienda_action" model="ir.actions.act_window">
+        <field name="name">Action Tienda</field>
+        <field name="res_model">salesianos.tienda</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="herencia_action" model="ir.actions.act_window">
+        <field name="name">Action Herencia</field>
+        <field name="res_model">salesianos.herencia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="dueno_view_tree" model="ir.ui.view">
+        <field name="name">dueno.tree</field>
+        <field name="model">salesianos.dueno</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"></field>
+                <field name="email" />
+                <field name="phone" />
+                <field name="mascota" />
+                <field name="edad" />
+                <field name="edad2" />
+                <field name="sumar" />
+                <field name="tienda" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mascota_view_tree" model="ir.ui.view">
+        <field name="name">mascota.tree</field>
+        <field name="model">salesianos.mascota</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"></field>
+                <field name="especie" />
+                <field name="raza" />
+                <field name="fecha_nacimiento" />
+                <field name="cliente" />
+                <field name="curioso" />
+            </tree>
+        </field>
+    </record>
+
+     <record id="tienda_view_tree" model="ir.ui.view">
+        <field name="name">tienda.tree</field>
+        <field name="model">salesianos.tienda</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"></field>
+                <field name="cliente"/>
+            </tree>
+        </field>
+    </record>
+    <record id="herencia_view_tree" model="ir.ui.view">
+        <field name="name">herencia.tree</field>
+        <field name="model">salesianos.herencia</field>
+        <field name="arch" type="xml">
+            <tree>
+                
+                <field name="nombreEmpresa"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dueno_form" model="ir.ui.view">
+        <field name="name">dueno.form</field>
+        <field name="model">salesianos.dueno</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="email" />
+                        <field name="phone" />
+                        <field name="mascota" />
+                        <field name="edad" />
+                        <field name="edad2" />
+                        <field name="sumar" />
+                        <field name="tienda" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="mascota_form" model="ir.ui.view">
+        <field name="name">mascota.form</field>
+        <field name="model">salesianos.mascota</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                       <field name="name"></field>
+                <field name="especie" />
+                <field name="raza" />
+                <field name="fecha_nacimiento" />
+                <field name="cliente" />
+                <field name="curioso" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tienda_form" model="ir.ui.view">
+        <field name="name">tienda.form</field>
+        <field name="model">salesianos.tienda</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                       <field name="name"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+   <menuitem
+		id="practica"
+		name="practica"
+		sequence="10"/>
+	<menuitem
+		id="dueno"
+		name="dueno"
+		action="dueno_action"
+		parent="practica"
+		sequence="10"/>
+    <menuitem
+		id="mascota"
+		name="mascota"
+		action="mascota_action"
+		parent="practica"
+		sequence="10"/>
+    <menuitem
+		id="tienda"
+		name="tienda"
+		action="tienda_action"
+		parent="practica"
+		sequence="10"/>
+    <menuitem
+		id="herencia"
+		name="herencia"
+		action="herencia_action"
+		parent="practica"
+		sequence="10"/>
+
+</odoo>
